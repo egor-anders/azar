@@ -1,0 +1,220 @@
+@import '../variables.scss';
+
+
+.search {
+  overflow: hidden;
+  background-color: #000000;
+
+  &__wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: flex-start;
+    box-sizing: border-box;
+    width: 100%;
+    height: 0;
+    transition: height 0.5s;
+
+    &--active {
+      height: 100vh;
+    }
+  }
+
+  &--fixed {
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    overflow-y: scroll;
+  }
+
+  &__cross {
+    position: absolute;
+    top: 4.5vh;
+    right: 5.5vh;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+
+    & img {
+      width: 100%;
+      height: 100%;
+    }
+
+    @media (max-width: $breakpoint-lg) {
+      right: 3.5%;
+    }
+
+    @media (max-width: $breakpoint-md) {
+      right: 8%;
+      width: 19px;
+      height: 19px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-flow: row wrap;
+    width: 900px;
+    margin-top: 25vh;
+
+    @media (max-width: $breakpoint-xl) {
+      width: 718px;
+    }
+
+    @media (max-width: calc($breakpoint-md + 60px)) {
+      width: 86%;
+    }
+  }
+
+  &__form {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 55px;
+
+    @media (max-width: $breakpoint-xl) {
+      height: 40px;
+    }
+
+    @media (max-width: $breakpoint-xl) {
+      height: 44px;
+    }
+  }
+
+  &__input {
+    width: 100%;
+    padding-right: 54px;
+    padding-bottom: 19px;
+    color: #FFFFFF;
+    font-weight: 400;
+    font-size: 32px;
+    font-style: italic;
+    line-height: 114.02%;
+    text-align: center;
+    background-color: #000000;
+    border: none;
+    border-bottom: 2px solid #E2E2E2;
+    outline: none;
+
+    &::placeholder {
+      padding-bottom: 19px;
+      padding-left: 54px;
+      color: #444444;
+    }
+
+    @media (max-width: $breakpoint-xl) {
+      padding-bottom: 15px;
+      font-size: 26px;
+      border-bottom: 1.6px solid #E2E2E2;
+    }
+
+    @media (max-width: $breakpoint-md) {
+      padding-right: 39px;
+      padding-bottom: 14px;
+      font-size: 24px;
+      border-bottom: 2px solid #E2E2E2;
+
+      &::placeholder {
+        padding-left: 39px;
+      }
+    }
+  }
+
+  &__button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 38px;
+    height: 38px;
+    background: none;
+    background-image: url("data:image/svg+xml,%3Csvg width='38' height='38' viewBox='0 0 38 38' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M23.944 26.2605C18.1559 30.8963 9.68333 30.5314 4.31778 25.1659C-1.43926 19.4088 -1.43926 10.0748 4.31778 4.31778C10.0748 -1.43926 19.4088 -1.43926 25.1659 4.31778C30.5314 9.68333 30.8963 18.1559 26.2605 23.944L37.5202 35.2038C38.1599 35.8435 38.1599 36.8806 37.5202 37.5202C36.8806 38.1599 35.8435 38.1599 35.2038 37.5202L23.944 26.2605ZM6.63423 22.8494C2.15654 18.3717 2.15654 11.1119 6.63423 6.63424C11.1119 2.15654 18.3717 2.15654 22.8494 6.63424C27.3238 11.1087 27.3271 18.3611 22.8593 22.8396C22.856 22.8428 22.8527 22.8461 22.8494 22.8494C22.8461 22.8527 22.8428 22.856 22.8396 22.8593C18.3611 27.3271 11.1086 27.3238 6.63423 22.8494Z' fill='%23C8C8C8'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+
+    @media (max-width: $breakpoint-xl) {
+      width: 30px;
+      height: 30px;
+      background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 38 38' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M23.944 26.2605C18.1559 30.8963 9.68333 30.5314 4.31778 25.1659C-1.43926 19.4088 -1.43926 10.0748 4.31778 4.31778C10.0748 -1.43926 19.4088 -1.43926 25.1659 4.31778C30.5314 9.68333 30.8963 18.1559 26.2605 23.944L37.5202 35.2038C38.1599 35.8435 38.1599 36.8806 37.5202 37.5202C36.8806 38.1599 35.8435 38.1599 35.2038 37.5202L23.944 26.2605ZM6.63423 22.8494C2.15654 18.3717 2.15654 11.1119 6.63423 6.63424C11.1119 2.15654 18.3717 2.15654 22.8494 6.63424C27.3238 11.1087 27.3271 18.3611 22.8593 22.8396C22.856 22.8428 22.8527 22.8461 22.8494 22.8494C22.8461 22.8527 22.8428 22.856 22.8396 22.8593C18.3611 27.3271 11.1086 27.3238 6.63423 22.8494Z' fill='%23C8C8C8'/%3E%3C/svg%3E%0A");
+    }
+
+    @media (max-width: $breakpoint-md) {
+      width: 24px;
+      height: 24px;
+      background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 38 38' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M23.944 26.2605C18.1559 30.8963 9.68333 30.5314 4.31778 25.1659C-1.43926 19.4088 -1.43926 10.0748 4.31778 4.31778C10.0748 -1.43926 19.4088 -1.43926 25.1659 4.31778C30.5314 9.68333 30.8963 18.1559 26.2605 23.944L37.5202 35.2038C38.1599 35.8435 38.1599 36.8806 37.5202 37.5202C36.8806 38.1599 35.8435 38.1599 35.2038 37.5202L23.944 26.2605ZM6.63423 22.8494C2.15654 18.3717 2.15654 11.1119 6.63423 6.63424C11.1119 2.15654 18.3717 2.15654 22.8494 6.63424C27.3238 11.1087 27.3271 18.3611 22.8593 22.8396C22.856 22.8428 22.8527 22.8461 22.8494 22.8494C22.8461 22.8527 22.8428 22.856 22.8396 22.8593C18.3611 27.3271 11.1086 27.3238 6.63423 22.8494Z' fill='%23C8C8C8'/%3E%3C/svg%3E%0A");
+    }
+  }
+
+
+  &__tags {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 40px;
+    text-align: center;
+
+    @media (max-width: $breakpoint-xl) {
+      margin-top: 31px;
+    }
+
+    @media (max-width: $breakpoint-md) {
+      margin-top: 19.5px;
+    }
+  }
+
+  &__tag {
+    position: relative;
+    box-sizing: border-box;
+    width: fit-content;
+    margin: 20px 10px;
+    margin-bottom: 10px;
+
+    &:hover {
+      z-index: 1;
+    }
+
+    &-link {
+      display: block;
+      margin: 5px;
+      padding: 25px;
+      color: #FFFFFF;
+      font-size: 29px;
+      text-align: center;
+      text-decoration: none;
+      background: #111111;
+      border: 2px solid #111111;
+      border-radius: 48px;
+      outline: none;
+      transition: transform 0.2s;
+
+      @media (max-width: $breakpoint-xl) {
+        padding: 24px;
+        font-size: 24px;
+      }
+
+      @media (max-width: $breakpoint-md) {
+        padding: 16px;
+        font-size: 16px;
+      }
+
+      &:hover {
+        transform: scale(1.1) !important;
+      }
+
+      &:active {
+        border-color: #FFFFFF;
+      }
+    }
+
+    @media (max-width: $breakpoint-xl) {
+      margin: 16px 12px;
+    }
+
+    @media (max-width: $breakpoint-md) {
+      margin: 7.5px 5.5px;
+    }
+  }
+}

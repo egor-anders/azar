@@ -1,0 +1,277 @@
+/* stylelint-disable scss/at-extend-no-missing-placeholder */
+
+@import '../variables.scss';
+
+.links {
+  position: relative;
+  background-color: #FFFFFF;
+
+  &__head {
+    @extend .feedback__head;
+
+    &-arrow {
+      transform: rotate(90deg);
+
+      @media (max-width: $breakpoint-xl) {
+        width: 18px;
+        height: 18px;
+      }
+
+
+      @media (max-width: $breakpoint-lg) {
+        width: 12px;
+        height: 12px;
+      }
+    }
+
+    @media (max-width: $breakpoint-md) {
+      display: none;
+    }
+  }
+
+  &__title {
+    @extend .feedback__title;
+    color: $color-body-secondary;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+
+    @media (max-width: $breakpoint-md) {
+      position: relative;
+      height: 390px;
+      overflow: hidden;
+      background-color: #000000;
+      border-radius: 37px;
+    }
+
+    @media (max-width: $breakpoint-md) {
+      &::after {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 10000;
+        display: block;
+        width: 136px;
+        height: 391px;
+        background-image: url("data:image/svg+xml,%3Csvg width='136' height='391' viewBox='0 0 136 391' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M86.8491 502.859L135.257 498.832C157.898 496.949 174.726 477.067 172.842 454.426L134.454 -7.00593L45.0499 0.431973L86.8491 502.859Z' fill='white' fill-opacity='0.26'/%3E%3Cpath d='M46.0854 553.5C62.868 552.103 75.3411 537.366 73.9449 520.584L30.4608 -2.09608L0.0732967 0.431994L46.0854 553.5Z' fill='white' fill-opacity='0.26'/%3E%3C/svg%3E%0A");
+        content: '';
+      }
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex: 1;
+    width: calc(100vw / 7);
+    height: calc(100vw / 7);
+    transition: border-radius 0.15s linear;
+
+    img {
+      margin: auto;
+
+      @media (max-width: $breakpoint-xl) {
+        width: 90px;
+        height: 65px;
+      }
+
+      @media (max-width: $breakpoint-lg) {
+        width: 80px;
+        height: 55px;
+      }
+    }
+
+    @media (min-width: $breakpoint-md) {
+      &:hover {
+        border-radius: 50%;
+      }
+    }
+
+
+    &--vk {
+      background-color: #0077FF;
+
+      @media (max-width: $breakpoint-md) {
+        top: 85px;
+        right: 49%;
+        z-index: 4;
+        width: 113px;
+        height: 113px;
+        border: 3px solid #FFFFFF;
+        border-radius: 21.6px;
+        transform: rotate(10.81deg);
+      }
+
+      & img {
+        @media (max-width: $breakpoint-md) {
+          width: 68px;
+          height: 42px;
+        }
+      }
+    }
+
+    &--dribbble {
+      background-color: #EC4989;
+
+      & img {
+        @media (max-width: $breakpoint-xl) {
+          width: 120px;
+          height: 90px;
+        }
+
+        @media (max-width: $breakpoint-md) {
+          width: 98px;
+          height: 98px;
+        }
+      }
+
+      @media (max-width: $breakpoint-md) {
+        top: 88px;
+        left: 51%;
+        z-index: 3;
+        width: 114px;
+        height: 114px;
+        border-radius: 101px;
+      }
+    }
+
+    &--telegram {
+      background-color: #42BCE8;
+
+      @media (max-width: $breakpoint-md) {
+        top: -10px;
+        left: 52%;
+        z-index: 4;
+        width: 117px;
+        height: 117px;
+        border-radius: 14.6px;
+        transform: rotate(-4.8deg);
+      }
+
+      & img {
+        @media (max-width: $breakpoint-md) {
+          width: 83px;
+          height: 70px;
+        }
+      }
+    }
+
+    &--instagram {
+      background-color: #D7276C;
+
+      @media (max-width: $breakpoint-md) {
+        top: -32px;
+        right: 46%;
+        z-index: 5;
+        width: 129px;
+        height: 129px;
+        border-radius: 90px;
+        transform: matrix(0.99, -0.12, 0.12, 0.99, 0, 0);
+      }
+
+      & img {
+        @media (max-width: $breakpoint-md) {
+          width: 62.5px;
+          height: 62.5px;
+        }
+      }
+    }
+
+    &--behance {
+      background-color: #1769FF;
+
+      @media (max-width: $breakpoint-md) {
+        top: 282px;
+        left: 0;
+        z-index: 2;
+        width: 100%;
+        height: 140px;
+        background: #1769FF;
+        border-radius: 22.5px;
+        transform: rotate(-3.84deg);
+      }
+
+      & img {
+        @media (max-width: $breakpoint-md) {
+          width: 78px;
+          height: 46px;
+          margin-bottom: 65px;
+        }
+      }
+    }
+
+    &--twitter {
+      background-color: #1DA1F2;
+
+      @media (max-width: $breakpoint-md) {
+        top: 194px;
+        right: 46%;
+        z-index: 1;
+        width: 120px;
+        height: 120px;
+        border-radius: 15.6px;
+        transform: rotate(-10.2deg);
+      }
+
+      & img {
+        @media (max-width: $breakpoint-md) {
+          width: 66px;
+          height: 55px;
+        }
+      }
+    }
+
+    &--facebook {
+      background-color: #0077FF;
+
+      @media (max-width: $breakpoint-md) {
+        top: 184px;
+        left: 52%;
+        z-index: 2;
+        width: 123px;
+        height: 123px;
+        background: #004696;
+        border-radius: 22.5px;
+        transform: rotate(18.76deg);
+      }
+
+      & img {
+        @media (max-width: $breakpoint-md) {
+          width: 36px;
+          height: 70px;
+        }
+      }
+    }
+
+    @media (max-width: $breakpoint-md) {
+      position: absolute;
+    }
+  }
+
+  &__star {
+    display: none;
+
+    @media (max-width: $breakpoint-md) {
+      position: absolute;
+      right: 12%;
+      bottom: -42px;
+      z-index: 20;
+      display: block;
+      width: 86px;
+      height: 86px;
+
+      & img {
+        width: 100%;
+        height: 100%;
+      }
+      animation: rotation 12s linear infinite;
+    }
+  }
+}
+
+@keyframes rotation { to { transform: rotate(360deg); } }
+
